@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Lato;
+  src: url("../src/assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-lato: Lato, "sans-serif";
+  --text-lg: 24;
+}
+
+@layer utilities {
+  .shadow-sidebar {
+    box-shadow: 0 0 10.9px 0 rgba(235, 235, 235, 0.25);
+  }
+}
