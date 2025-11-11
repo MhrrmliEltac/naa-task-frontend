@@ -30,7 +30,10 @@ const DropdownMenu = ({
 
       case Type.Status:
         setMenuValue((prev: MenuValueType) => {
-          const updated = { ...prev, statusValue: value };
+          const updated = { 
+            ...prev, 
+            statusValue: value as typeof prev.statusValue 
+          };
           callback(updated);
           return updated;
         });

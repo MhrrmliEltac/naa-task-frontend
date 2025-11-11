@@ -1,4 +1,3 @@
-import React from "react";
 import type { IconType } from "../../types/icon.types";
 
 const CancelIcon = ({ width, height, fill }: IconType) => {

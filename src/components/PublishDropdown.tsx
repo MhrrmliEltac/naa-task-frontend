@@ -19,11 +19,7 @@ interface PublishDropdownProps {
   ) => void;
 }
 
-const PublishDropdown = ({
-  itemId,
-  currentStatus,
-  onStatusChange,
-}: PublishDropdownProps) => {
+const PublishDropdown = ({ currentStatus }: PublishDropdownProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const options: Options[] = [
@@ -41,6 +37,7 @@ const PublishDropdown = ({
 
   const handleClick = (status: "draft" | "published" | "archived") => {
     // onStatusChange(itemId, status);
+    console.log(status);
     setOpen(false);
   };
 
@@ -71,7 +68,7 @@ const PublishDropdown = ({
       </button>
 
       {open && (
-        <div className="absolute left-0 top-full p-3 mt-2 w-full bg-white border border-[#F7F7F7] rounded-[12px] shadow-md z-10 shadow-sidebar">
+        <div className="absolute left-0 top-full p-3 mt-2 w-full bg-white border border-[#F7F7F7] rounded-xl shadow-md z-10 shadow-sidebar">
           <ul className="flex flex-col gap-4">
             {options.map((item) => (
               <li
