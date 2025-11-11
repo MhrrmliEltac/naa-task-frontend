@@ -16,7 +16,7 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import { tableHead } from "../constants/tableData";
+import { tableHead } from "../constants/tableHead";
 import { truncateWord } from "../helpers/truncateFunc";
 import { formatDate } from "../helpers/formatDate";
 import EditIcon from "../assets/icons/EditIcon";
