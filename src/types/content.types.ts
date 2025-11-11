@@ -30,8 +30,6 @@ export interface CreateContentDto {
   publishStatus: PublishStatusType;
 }
 
-export interface UpdateContentDto extends Partial<CreateContentDto> {}
-
 export interface ContentFilters {
   page?: number;
   limit?: number;

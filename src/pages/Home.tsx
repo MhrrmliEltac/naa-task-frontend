@@ -120,7 +120,7 @@ const Home = () => {
     setFilters((prev: ContentFilters) => ({
       ...prev,
       limit: newLimit,
-      page: 1, 
+      page: 1,
     }));
   };
 
@@ -129,7 +129,7 @@ const Home = () => {
       <PageHeader
         pageName="News & Announcements"
         btnText="Add News or Announcement"
-        postCount={ContentData?.data.length}
+        postCount={ContentData?.pagination.total || 0}
         handleOpen={handleOpen}
       />
 
