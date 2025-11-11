@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const apiClient = axios.create({
-  baseURL: import.meta.env.REACT_APP_API_URL || "http://localhost:5000/api",
+  baseURL: import.meta.env.REACT_APP_API_URL || "https://naa-task-backend.vercel.app/api",
   headers: {
     "Content-Type": "multipart/form-data",
   },
