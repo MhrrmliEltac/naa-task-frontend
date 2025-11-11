@@ -7,6 +7,7 @@ export interface MenuValueType {
   postValue?: string;
   statusValue?: StatusValueType;
   publishValue?: string;
+  limitValue?: string;
 }
 
 export interface DropdownList {

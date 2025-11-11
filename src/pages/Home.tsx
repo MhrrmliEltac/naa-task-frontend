@@ -28,6 +28,7 @@ import ContentModal from "../components/ContentModal";
 import { Content, ContentFilters } from "../types/content.types";
 import { useContents, useDeleteContent } from "../hooks/useContent";
 import PublishDropdown from "../components/PublishDropdown";
+import Pagination from "../components/Pagination";
 
 const Home = () => {
   // custom hook for modal
@@ -42,7 +43,7 @@ const Home = () => {
 
   const [filters, setFilters] = useState<ContentFilters>({
     page: 1,
-    limit: 10,
+    limit: 4,
     category: "",
     publishStatus: "",
     active: "",
@@ -106,6 +107,21 @@ const Home = () => {
       }));
       refetch();
     }
+  };
+
+  const handlePageChange = (page: number) => {
+    setFilters((prev: ContentFilters) => ({
+      ...prev,
+      page,
+    }));
+  };
+
+  const handleLimitChange = (newLimit: number) => {
+    setFilters((prev: ContentFilters) => ({
+      ...prev,
+      limit: newLimit,
+      page: 1, 
+    }));
   };
 
   return (
@@ -315,6 +331,15 @@ const Home = () => {
           </TableBody>
         </Table>
       </TableContainer>
+
+      {/* Pagination */}
+      <Pagination
+        currentPage={ContentData?.pagination?.page || filters.page || 1}
+        totalPages={ContentData?.pagination?.totalPages || 0}
+        limit={ContentData?.pagination?.limit || filters.limit || 10}
+        onPageChange={handlePageChange}
+        onLimitChange={handleLimitChange}
+      />
 
       {/* Action Modal */}
       <ActionModal

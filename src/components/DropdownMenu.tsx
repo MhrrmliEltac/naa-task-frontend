@@ -46,6 +46,14 @@ const DropdownMenu = ({
           return updated;
         });
         return;
+
+      case Type.Limit:
+        setMenuValue((prev: MenuValueType) => {
+          const updated = { ...prev, limitValue: value };
+          callback(updated);
+          return updated;
+        });
+        return;
     }
   };
 

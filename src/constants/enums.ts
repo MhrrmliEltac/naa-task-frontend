@@ -3,4 +3,5 @@ export enum Type {
   Status,
   Publish,
   Draft,
+  Limit,
 }
