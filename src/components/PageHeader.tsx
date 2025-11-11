@@ -3,7 +3,7 @@ import type { OpenType } from "../types/modal.types";
 
 interface PageHeaderProps {
   pageName: string;
-  postCount: number;
+  postCount: number | undefined;
   btnText: string;
   handleOpen: (name: keyof OpenType, action: string) => void;
 }

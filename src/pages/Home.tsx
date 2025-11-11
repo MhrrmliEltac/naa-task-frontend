@@ -113,7 +113,7 @@ const Home = () => {
       <PageHeader
         pageName="News & Announcements"
         btnText="Add News or Announcement"
-        postCount={210}
+        postCount={ContentData?.data.length}
         handleOpen={handleOpen}
       />
 
